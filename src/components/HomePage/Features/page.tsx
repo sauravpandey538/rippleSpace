@@ -17,7 +17,7 @@ function Features() {
     ]
     return (
         <div className="py-20">
-            <MainHeader className=" max-w-full ">What We Provide ?</MainHeader>
+            <MainHeader className=" max-w-full ">Key Features</MainHeader>
             <CardModel fakeApi={fakeApi} />
         </div>
     )
