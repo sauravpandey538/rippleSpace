@@ -6,6 +6,7 @@ interface Feature {
     name: string;
     position: string;
     description: string;
+    img: string
 }
 
 interface CardModelProps {
@@ -18,9 +19,11 @@ function TestimonialModel({ fakeApi }: CardModelProps) {
             {fakeApi?.map((feature, index) => (
                 <div key={index} className='bg-gray-800 shadow-lg rounded-lg p-6 max-w-sm w-full'>
                     <div className='flex gap-4 justify-start items-center'>
-                        <Avatar>
-                            <AvatarImage src="https://github.com/shadcn.png" />
-                            <AvatarFallback>PP</AvatarFallback>
+                        <Avatar className="relative h-14 w-14">
+                            <AvatarImage className="absolute inset-0 object-cover w-full h-full" src={feature.img} />
+                            <AvatarFallback className="flex justify-center items-center h-full w-full bg-gray-300">
+                                PP
+                            </AvatarFallback>
                         </Avatar>
                         <div>
                             <SubHeader className='my-0 py-0 text-left text-xl font-semibold'>{feature.name}</SubHeader>

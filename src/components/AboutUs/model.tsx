@@ -4,6 +4,7 @@ import { Description } from '@/reuse/description';
 interface StorySection {
     title: string;
     description: string | string[];
+    img: string;
 }
 
 interface StoryModelProps {
@@ -12,14 +13,14 @@ interface StoryModelProps {
 
 function Model({ sections }: StoryModelProps) {
     return (
-        <div className='flex justify-center  items-stretch w-full bg-transparent gap-5 flex-wrap'>
+        <div className='flex justify-center items-stretch w-full bg-transparent gap-5 flex-wrap'>
             {sections.map((section, index) => (
-                <div key={index} className='mb-6 flex-col max-w-96 flex  items-center p-5'>
-                    <div className="flex justify-center items-center h-64 w-80 bg-gray-100 flex-wrap mb-4">
+                <div key={index} className='mb-6 flex-col max-w-96 flex items-center p-5'>
+                    <div className="relative h-64 w-80 bg-gray-100 mb-4">
                         <img
-                            src='https://www.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600nw-1037719192.jpg'
+                            src={section.img}
                             alt={section.title}
-                            className='max-h-full max-w-full'
+                            className='absolute inset-0 object-cover w-full h-full'
                         />
                     </div>
                     <SubHeader className='my-2 text-left'>{section.title}</SubHeader>
