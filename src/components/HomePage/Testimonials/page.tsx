@@ -1,6 +1,7 @@
 import { MainHeader } from "@/reuse/mainHeader"
 import TestimonialModel from "./testimonialModel"
-
+import RequestADemo from '../HeroSection/CTA/requestADemo'
+import StartYourFreeTrial from '../HeroSection/CTA/startYourFreeTrial'
 
 function Testimonial() {
     const fakeApi = [
@@ -11,9 +12,13 @@ function Testimonial() {
 
     ]
     return (
-        <div>
-            <MainHeader className=" max-w-full ">Customer Testimonials</MainHeader>
+        <div className="bg-white py-20">
+            <MainHeader className=" max-w-full text-black">Customer Testimonials</MainHeader>
             <TestimonialModel fakeApi={fakeApi} />
+            <div className='flex justify-center items-end w-full py-10 gap-4 flex-wrap'>
+                <StartYourFreeTrial />
+                <RequestADemo />
+            </div>
         </div>
     )
 }

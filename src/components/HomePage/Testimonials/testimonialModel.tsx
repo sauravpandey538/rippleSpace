@@ -17,7 +17,7 @@ function TestimonialModel({ fakeApi }: CardModelProps) {
     return (
         <div className='flex justify-center items-stretch w-full bg-transparent flex-wrap gap-6'>
             {fakeApi?.map((feature, index) => (
-                <div key={index} className='bg-gray-800 shadow-lg rounded-lg p-6 max-w-sm w-full'>
+                <div key={index} className='bg-white shadow-lg rounded-lg p-6 max-w-sm w-full'>
                     <div className='flex gap-4 justify-start items-center'>
                         <Avatar className="relative h-14 w-14">
                             <AvatarImage className="absolute inset-0 object-cover w-full h-full" src={feature.img} />
@@ -26,11 +26,11 @@ function TestimonialModel({ fakeApi }: CardModelProps) {
                             </AvatarFallback>
                         </Avatar>
                         <div>
-                            <SubHeader className='my-0 py-0 text-left text-xl font-semibold'>{feature.name}</SubHeader>
-                            <Description className='text-left text-sm '>{feature.position}</Description>
+                            <SubHeader className='my-0 py-0 text-left text-xl font-semibold text-black'>{feature.name}</SubHeader>
+                            <Description className='text-left text-sm text-black'>{feature.position}</Description>
                         </div>
                     </div>
-                    <Description className='text-left mt-4 '>{feature.description}</Description>
+                    <Description className='text-left mt-4 text-black'>{feature.description}</Description>
                 </div>
             ))}
         </div>
